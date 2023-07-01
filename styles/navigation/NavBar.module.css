@@ -4,6 +4,8 @@
     justify-content: space-between;
     align-items: center;
     margin: 56px auto 123px auto;
+    position: relative;                     /* this is here to make sure the nav bar is on top of the capsule image that is positioned in the background */
+    z-index: var(--far);        
 }
 
 .logo{
@@ -49,4 +51,33 @@
 
 .getStartedButton:hover{
     background-color: #F98F75;
+}
+
+@media(max-width: 1160px) {
+    .container{
+        width: 90%;
+    }
+}
+
+@media(max-width: 920px){
+    .container{
+        margin-top: 45px;
+    }
+    .logo{
+        width: 110px;
+    }
+
+    .links {
+        gap: 20px;
+    }
+
+    .link{
+        font-size: 0.6125rem;
+    }
+
+    .getStartedButton {
+        width: 120px;
+        height: 35px;
+        font-size: 0.6125rem;
+    }
 }

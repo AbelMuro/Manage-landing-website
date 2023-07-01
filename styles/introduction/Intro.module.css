@@ -1,0 +1,134 @@
+.container{
+    width: 1110px;
+    display: flex;
+    margin: auto;
+    gap: 100px;
+    position: relative;
+    z-index: var(--far);
+}
+
+.textbox{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title{
+    color: #242D52;
+    font-size: 3.5rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: -1px;
+}
+
+.desc{
+    width: 350px;
+    color: #242D52;
+    font-size: 1rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    opacity: 0.5025343894958496;
+    margin-bottom: 34px;
+}
+
+.getStartedButton{
+    width: 137px;
+    height: 44px;
+    border-radius: 22px;
+    background-color: #F3603C;
+    color: #FCF6F5;
+    font-size: 0.8125rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 15px 15px -10px #FF9F8E;
+}
+
+.getStartedButton:hover{
+    background-color: #F98F75;
+}
+
+.image{
+    width: 540px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media(max-width: 1160px){
+    .container{
+        width: 90%;
+        gap: 9px;
+        justify-content: space-between;
+    }
+
+    .textbox{
+        width: 370px;
+    }    
+
+    .image{
+        width: 400px;
+        flex-shrink: 0;
+        flex-grow: 0;
+    }
+
+    .desc{
+        margin-bottom: 20px
+    }
+
+    .title{
+        font-size: 2.5rem;
+        line-height: 50px;
+    }
+}
+
+@media(max-width: 860px){
+    .textbox{
+        width: 323px;
+    }
+    .image{
+        width: 318px;
+    }
+
+    .title{
+        font-size: 2.0rem;
+    }
+
+    .desc{
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width: 660px){
+    .container{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .title{
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .desc{
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .image{
+        width: 100%;
+    }
+    .textbox{
+        width: 100%;
+    }
+    .getStartedButton{
+        align-self: center;
+    }
+}
