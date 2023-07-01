@@ -26,7 +26,43 @@ export default function MobileNavBar(){
                 dialogRef.current.style.display = '';
             }, 200)
         }
+    }, [menu])
 
+    useEffect(() => {
+        const handleScroll = (e) => {
+           window.scrollTo(-1,-1);
+        }
+
+        if(menu) 
+            window.addEventListener('scroll', handleScroll);
+        else
+            window.removeEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+
+    }, [menu])
+
+    useEffect(() => {
+        const handleClick = (e) => {
+            if(e.target.matches('.' + styles.overlay))
+                setMenu(false);
+         }
+ 
+         if(menu) 
+             window.addEventListener('click', handleClick);
+         else
+             window.removeEventListener('click', handleClick);
+         
+         return () => {
+             window.removeEventListener('click', handleClick)
+         }
+    }, [menu])
+
+    useEffect(() => {
+        if(menu)
+            window.scrollTo(0, 0);
     }, [menu])
 
     return(

@@ -1,0 +1,90 @@
+.window{
+    height: 220px;
+    position: relative;
+    margin-bottom: 48px;
+}
+
+.quotesCarousel{
+    position: absolute;
+    width: 2250px;
+    display: flex;
+    gap: 30px;
+}
+
+.left, .right{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    background-color: #F3603C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;   
+    z-index: var(--close); 
+}
+
+.left{
+    left: 20px;
+}
+
+.right{
+    right: 20px;
+}
+
+.arrowIcon{
+    width: 15px;
+    height: auto;
+    object-fit: contain;
+}
+
+.quotebox {
+    width: 540px;
+    min-height: 220px;
+    padding: 35px 30px 0px 30px;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 19px;
+    position: relative;
+    z-index: var(--far);
+}
+
+.image{
+    width: 72px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.name{
+    color: #242D52;
+    text-align: center;
+    font-size: 1rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.286px;
+}
+
+.quote{
+    color: #242D52;
+    text-align: center;
+    font-size: 1rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    opacity: 0.5025343894958496;
+}

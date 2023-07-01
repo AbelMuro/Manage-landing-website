@@ -8,6 +8,7 @@ export default function BackgroundImages() {
                 width='0' height='0'
                 alt='background image'
                 className={styles.imageOne}
+                priority
                 />
         </>
     )
