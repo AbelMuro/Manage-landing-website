@@ -1,5 +1,5 @@
 import NavBar from '../components/navigation/NavBar';
-import Intro from '../components/introduction/intro';
+import Intro from '../components/introduction/Intro';
 import CompanyDetails from '../components/companyDetails/CompanyDetails';
 import CompanyQuotes from '../components/companyQuotes/CompanyQuotes';
 import MobileCompanyQuotes from '../components/companyQuotes/MobileCompanyQuotes';
