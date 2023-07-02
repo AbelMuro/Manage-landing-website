@@ -1,11 +1,19 @@
-.imageOne{
+.imageOne, .imageTwo{
     width: 736px;
     height: auto;
     object-fit: contain;
     position: absolute;
+    z-index: var(--farthest);
+}
+
+.imageOne{
     top: -100px;
     right: -80px;
-    z-index: var(--farthest);
+}
+
+.imageTwo{
+    bottom: 650px;
+    left: -350px;
 }
 
 @media(max-width: 1160px){
@@ -18,6 +26,12 @@
 @media(max-width: 860px){
     .imageOne {
         width: 535px;
+    }
+}
+
+@media(max-width: 820px){
+    .imageTwo{
+        display: none;
     }
 }
 

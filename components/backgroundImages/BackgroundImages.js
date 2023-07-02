@@ -11,6 +11,11 @@ const BackgroundImages = () => {
                 className={styles.imageOne}
                 priority
                 />
+            <Image src={'/images/bg-tablet-pattern.svg'}
+                width='0' height='0'
+                alt='background image'
+                className={styles.imageTwo}
+                />
         </>
     )
 }

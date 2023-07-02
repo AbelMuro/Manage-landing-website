@@ -3,6 +3,8 @@
     width: 1110px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: var(--close)
 }
 
 .companyIntro {
