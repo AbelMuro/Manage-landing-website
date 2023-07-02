@@ -1,8 +1,9 @@
+import {memo} from 'react';
 import Image from 'next/image'
 import styles from '../../styles/introduction/Intro.module.css';
 
-export default function Intro() {
-    return(
+const Intro = () => {
+    return( 
         <section className={styles.container}>
             <div className={styles.textbox}>
                 <h1 className={styles.title}>
@@ -30,3 +31,5 @@ export default function Intro() {
         </section>
     )
 }
+
+export default memo(Intro)

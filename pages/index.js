@@ -3,6 +3,7 @@ import Intro from '../components/introduction/intro';
 import CompanyDetails from '../components/companyDetails/CompanyDetails';
 import CompanyQuotes from '../components/companyQuotes/CompanyQuotes';
 import MobileCompanyQuotes from '../components/companyQuotes/MobileCompanyQuotes';
+import FooterBar from '../components/footer/FooterBar';
 import BackgroundImages from '../components/backgroundImages/BackgroundImages';
 import useMediaQuery from '../hooks/useMediaQuery';
 
@@ -16,6 +17,7 @@ export default function Home() {
             <Intro/>
             <CompanyDetails/>
             {mobile ? <MobileCompanyQuotes/> : <CompanyQuotes/>}
+            <FooterBar/>
         </main>
     )
 }

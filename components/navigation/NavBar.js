@@ -1,9 +1,10 @@
+import {memo} from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import MobileNavBar from './MobileNavBar';
 import Image from 'next/image';
 import styles from '../../styles/navigation/NavBar.module.css';
 
-export default function NavBar(){
+const NavBar = () => {
     const [mobile] = useMediaQuery('(max-width: 660px)');
 
     return mobile ? <MobileNavBar/> : 
@@ -35,5 +36,6 @@ export default function NavBar(){
                     Get Started
                 </button>
         </nav> 
-    
 }
+
+export default memo(NavBar);

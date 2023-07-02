@@ -6,9 +6,12 @@ import styles from '../../styles/companyQuotes/MobileCompanyQuotes.module.css';
 export default function MobileCompanyQuotes () {
     const [quote, setQuote] = useState(quotes[0]);
     const index = useRef(0);
+    const carouselInterval = useRef()
 
     const handleDot = (e) => {
         if(!e.target.matches('.' + styles.dot)) return;
+
+        clearInterval(carouselInterval.current);
 
         index.current = Number(e.target.getAttribute('data-dot'));
         setQuote(quotes[index.current])
@@ -28,6 +31,20 @@ export default function MobileCompanyQuotes () {
         })
 
     }, [quote])
+
+    useEffect(() => {
+        carouselInterval.current = setInterval(() => {
+            if(index.current >= 3) index.current = -1;
+
+            index.current += 1;            
+            setQuote(quotes[index.current])
+        }, 2000)
+
+        return () => {
+            clearInterval(carouselInterval.current);
+        }
+        
+    }, [])
 
     return(
         <section className={styles.container}>

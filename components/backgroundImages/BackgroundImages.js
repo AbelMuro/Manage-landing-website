@@ -1,7 +1,8 @@
+import {memo} from 'react';
 import Image from 'next/image';
 import styles from '../../styles/backgroundImages/backgroundImages.module.css';
 
-export default function BackgroundImages() {
+const BackgroundImages = () => {
     return(
         <>  
             <Image src={'/images/bg-tablet-pattern.svg'}
@@ -13,3 +14,5 @@ export default function BackgroundImages() {
         </>
     )
 }
+
+export default memo(BackgroundImages);

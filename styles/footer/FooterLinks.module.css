@@ -1,0 +1,231 @@
+.container{
+    width: 100%;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1D1E25;
+}
+
+.content{
+    width: 1110px;
+    display: grid;
+    grid-template-columns: 154px 72px 102px 272px;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 147px;
+    height: auto;
+    object-fit: contain;
+}
+
+.groupOneLinks, .groupTwoLinks{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    color: #FFF;
+}
+
+.groupOneLinks{
+    grid-column: 2/3;
+    grid-row: 1/3;
+} 
+
+.groupTwoLinks{
+    grid-column: 3/4;
+    grid-row: 1/3;
+}
+
+
+.link{
+    font-size: 0.9375rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.234px;
+    cursor: pointer;
+}
+
+.link:hover{
+    color: #F3603C;
+}
+
+.socialLinks{
+    display: flex;
+    width: 154px;
+    height: 20px;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    align-self: flex-end;
+}
+
+.socialLink{
+    width: 20px;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-color: white;
+    cursor: pointer;
+    mask-size: 20px 20px;
+    -webkit-mask-size: 20px 20px;
+}
+
+.socialLink:nth-of-type(1){
+    height: 20px;
+    mask-image: url('../../public/icons/icon-facebook.svg');
+    -webkit-mask-image: url('../../public/icons/icon-facebook.svg');
+}
+
+.socialLink:nth-of-type(2){
+    height: 20px;
+    mask-image: url('../../public/icons/icon-youtube.svg');
+    -webkit-mask-image: url('../../public/icons/icon-youtube.svg');
+}
+
+.socialLink:nth-of-type(3){
+    height: 16px;
+    mask-image: url('../../public/icons/icon-twitter.svg');
+    -webkit-mask-image: url('../../public/icons/icon-twitter.svg');
+    mask-size: 20px 16px;
+    -webkit-mask-size: 20px 16px;
+}
+
+.socialLink:nth-of-type(4){
+    height: 20px;
+    mask-image: url('../../public/icons/icon-pinterest.svg');
+    -webkit-mask-image: url('../../public/icons/icon-pinterest.svg');
+}
+
+.socialLink:nth-of-type(5){
+    height: 20px;
+    mask-image: url('../../public/icons/icon-instagram.svg');
+    -webkit-mask-image: url('../../public/icons/icon-instagram.svg');
+}
+
+.socialLink:hover{
+    background-color: #F3603C;
+}
+
+.copyright{
+    grid-column: 4/5;
+    grid-row: 2/3;
+    align-self: flex-end;
+    color: #FFF;
+    text-align: right;
+    font-size: 0.8125rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.203px;
+    white-space: nowrap;
+    opacity: 0.5025343894958496;
+}
+
+@media(max-width: 1160px) {
+    .content{
+        width: 90%;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3, auto);
+    }   
+}
+
+@media(max-width: 1000px) {
+    .container{
+        padding: 51px 0px 30px 0px;
+    }
+
+    .content{
+        row-gap: 50px;
+        column-gap: 40px;
+        justify-content: center;
+    }
+
+    .logo{
+        align-self: center;
+    }
+
+    .groupOneLinks{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .groupTwoLinks {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        justify-self: flex-end;
+    }
+
+    .socialLinks{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .copyright{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+}
+
+@media(max-width: 660px) {
+    .content{
+        grid-template-rows: repeat(5, auto);
+        column-gap: 80px
+    }
+
+    .groupOneLinks{
+        justify-self: flex-end;
+    }
+
+    .groupTwoLinks {
+        justify-self: flex-start;
+    }    
+
+    .socialLinks{
+        width: auto;
+        height: 32px;
+        grid-column: 1/3;
+        grid-row: 3/4;
+        justify-self: center;
+        gap: 34px;
+        margin-bottom: 4px;
+    }
+
+    .socialLink:nth-of-type(1), 
+    .socialLink:nth-of-type(2), 
+    .socialLink:nth-of-type(4), 
+    .socialLink:nth-of-type(5){
+        width: 32px;
+        height: 32px;
+        mask-size: 32px 32px;
+        -webkit-mask-size: 32px 32px;
+    } 
+    
+
+    .socialLink:nth-of-type(3){
+        width: 32px;
+        height: 26.4px;
+        mask-size: 32px 26.4px;
+        -webkit-mask-size: 32px 26.4px;
+        mask-position: center;
+        -webkit-mask-position: center;
+    }
+
+    .logo{
+        grid-column: 1/3;
+        grid-row: 4/5;
+        justify-self: center;
+    }
+
+    .copyright{
+        grid-column: 1/3;
+        grid-row: 5/6;
+        text-align: center;
+    }
+}

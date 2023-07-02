@@ -16,12 +16,14 @@ export default function MobileNavBar(){
             overlayRef.current.style.display = 'block';
             dialogRef.current.style.display = 'block';
             setTimeout(() => {
+                if(!overlayRef.current) return;
                 overlayRef.current.style.opacity = '1';
             }, 10)
         }
         else {
             overlayRef.current.style.opacity = '';
             setTimeout(() => {
+                if(!overlayRef.current || !dialogRef.current) return;
                 overlayRef.current.style.display = '';
                 dialogRef.current.style.display = '';
             }, 200)

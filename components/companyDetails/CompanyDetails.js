@@ -1,6 +1,7 @@
+import {memo} from 'react';
 import styles from '../../styles/companyDetails/CompanyDetails.module.css';
 
-export default function CompanyDetails () {
+const CompanyDetails = () => {
     return(
         <section className={styles.container}>
             <div className={styles.companyIntro}>
@@ -44,3 +45,5 @@ export default function CompanyDetails () {
         </section>
     )
 }
+
+export default memo(CompanyDetails);

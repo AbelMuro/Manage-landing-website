@@ -1,4 +1,6 @@
 import {useRef, useEffect} from 'react';
+import LeftArrowButton from './LeftArrowButton';
+import RightArrowButton from './RightArrowButton';
 import quotes from '../../data/quotes';
 import Image from 'next/image';
 import styles from '../../styles/companyQuotes/CompanyQuotes.module.css';
@@ -12,6 +14,8 @@ export default function CompanyQuotes() {
         if(interval.current) clearInterval(interval.current);
 
         interval.current = setInterval(() => {
+            if(!carouselRef.current) return;
+
             let prevPosition = carouselRef.current.style.left;
             prevPosition = Number(prevPosition.replace('px', ''));
             if(prevPosition === 25) return;
@@ -23,6 +27,8 @@ export default function CompanyQuotes() {
         if(interval.current) clearInterval(interval.current);
 
         interval.current = setInterval(() => {
+            if(!carouselRef.current || !carouselRef.current || !windowRef.current) return;
+
             let prevPosition = carouselRef.current.style.left;
             prevPosition = Number(prevPosition.replace('px', ''));
             const windowWidth = windowRef.current.getBoundingClientRect().width; 
@@ -47,39 +53,39 @@ export default function CompanyQuotes() {
         }
     },[])
 
+
     return(
-        <section className={styles.window} ref={windowRef}>
-            <button className={styles.left} onMouseDown={slideToLeft} onMouseUp={stopSliding}>
-                <Image src={'/icons/icon-left-arrow.svg'}
-                    width='0' height='0'
-                    alt='left icon'
-                    className={styles.arrowIcon}/>
-            </button>
-            <section className={styles.quotesCarousel} ref={carouselRef} style={{left: '0px'}}>
-                {quotes.map((quote, i) => {
-                    return(                
-                    <div className={styles.quotebox} key={i}>
-                        <Image src={`/images/${quote['photo url']}`} 
-                            width='0'height='0'
-                            alt={`${quote.author} photo`}
-                            className={styles.image}
-                            unoptimized/>
-                        <h1 className={styles.name}>
-                            {quote.author}
-                        </h1>
-                        <q className={styles.quote}>
-                            {quote.quote}
-                        </q>
-                    </div>)
-                })}
-            </section>
-            <button className={styles.right} onMouseDown={slideToRight} onMouseUp={stopSliding}>
-                <Image src={'/icons/icon-right-arrow.svg'}
-                    width='0' height='0'
-                    alt='right icon'
-                    className={styles.arrowIcon}/>
-            </button>
-        </section>
+        <div className={styles.container}>
+            <h1 className={styles.title}>
+                What they've said
+            </h1>
+            <section className={styles.window} ref={windowRef}>
+                <LeftArrowButton slideToLeft={slideToLeft} stopSliding={stopSliding}/>
+                <section className={styles.quotesCarousel} ref={carouselRef} style={{left: '0px'}}>
+                    {quotes.map((quote, i) => {
+                        return(                
+                        <div className={styles.quotebox} key={i}>
+                            <Image src={`/images/${quote['photo url']}`} 
+                                width='0'height='0'
+                                alt={`${quote.author} photo`}
+                                className={styles.image}
+                                unoptimized/>
+                            <h1 className={styles.name}>
+                                {quote.author}
+                            </h1>
+                            <q className={styles.quote}>
+                                {quote.quote}
+                            </q>
+                        </div>)
+                    })}
+                </section>
+                <RightArrowButton slideToRight={slideToRight} stopSliding={stopSliding}/>
+            </section>    
+            <button className={styles.getStartedButton}>
+                Get Started
+            </button>    
+        </div>
+
 
     )
 }

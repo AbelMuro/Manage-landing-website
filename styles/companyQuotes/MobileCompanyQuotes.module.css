@@ -3,12 +3,20 @@
     flex-direction: column;
     gap: 26px;
     width: 90%;
-    margin: auto;
+    margin: 0px auto 42px auto;
 }
 
 .title{
     margin-bottom: 72px;
     text-align: center;
+    color: #242D52;
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 800;
+    line-height: 45px;
+    letter-spacing: -0.66px;
 }
 
 .quotebox{
@@ -72,6 +80,10 @@
     cursor: pointer;
 }
 
+.dot:hover{
+    background-color: #ffbbab;
+}
+
 .getStartedButton{
     width: 137px;
     height: 44px;
@@ -86,6 +98,7 @@
     font-weight: 700;
     line-height: normal;
     cursor: pointer;
+    align-self: center;
 }
 .getStartedButton:hover{
     background-color: #F98F75;
