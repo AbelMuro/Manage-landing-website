@@ -46,6 +46,8 @@
 }
 
 .getStartedButton{
+    position: relative;
+    z-index: 9999;
     width: 137px;
     height: 44px;
     border-radius: 22px;
